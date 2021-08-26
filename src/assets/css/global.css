@@ -1,0 +1,8 @@
+/*全局样式表*/
+html,body,#app{
+    background-image: url("1629025747455.jpeg");
+    /*background-size:100%;*/
+    background-size: 100% auto;
+    margin: 0;
+    padding: 0;
+}

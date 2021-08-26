@@ -54,7 +54,7 @@
 <!--  <div style="margin-top: 20px">-->
 <!--    <el-button @click="toggleSelection()">取消全选</el-button>-->
 <!--  </div>-->
-    <div align="right">
+    <div align="right" class="computer">
       <span class="allprice">总价：{{total}}</span>
       <span>
                 <router-link to="/makeSureOrder">
@@ -136,9 +136,16 @@ computed:{
 </script>
 
 <style scoped>
+h1{
+  color: #fff;
+  text-align: left;
+}
 .allprice{
+  width: 80%;
+  margin-top: 10px;
+  background-color: #fff;
   font-size: 30px;
-  color: black;
+  color: #B1191A;
 }
 button{
   width: 150px;
@@ -148,5 +155,11 @@ button{
   font-weight: bold;
   font-size: 20px;
   color: white;
+}
+.computer{
+  width: 100%;
+  height: 80px;
+padding-top: 20px;
+  background-color: #fff;
 }
 </style>

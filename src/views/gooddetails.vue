@@ -12,7 +12,7 @@
     <p>现价：￥ {{details.price}}</p>
     <el-button type="success">分享</el-button>
     <el-button size="medium" type="danger" @click="addCart" icon="el-icon-shopping-cart-2">加入购物车</el-button>
-    <p style="color: #777777">温馨提示·支持7天无理由退货</p>
+    <p style="color: #fff">温馨提示·支持7天无理由退货</p>
   </div>
   </div>
   <div class="goodsDescImg" id="goodsDescImg" style="text-align: center;margin-top: 60px">
@@ -95,7 +95,7 @@ export default {
 }
 .right{
   float: right;
-  width: 500px;
+  width: 300px;
   height: 500px;
   /*background-color: #4cae4c;*/
 }
@@ -104,6 +104,9 @@ export default {
   height: 500px;
   font-size: 30px;
   font-weight: bold;
+  color: #fff;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .content p{
   margin-top: 30px;

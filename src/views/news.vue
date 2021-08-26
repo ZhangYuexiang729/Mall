@@ -33,5 +33,12 @@ export default {
 .container{
   text-align: left;
   width: 80%;
+  background-color: rgba(255, 255, 255, 0.7);
+
 }
+h2{
+  color: #2c3e50;
+  font-size: 60px;
+}
+
 </style>

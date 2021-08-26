@@ -1,7 +1,19 @@
 <template>
-  <li class="list-group-item">
-      <div class="user" v-for="item in links.array" :key="item.id"><span>{{ item.name }}</span><span class ='content'>说: <br> {{item.content}}</span><br><span class="date">创建时间：{{item.createdAt}}</span></div>
-  </li>
+
+  <el-card class="box-card">
+    <template #header>
+      <div class="card-header">
+        <span>留言内容</span>
+<!--        <el-button class="button" type="text">操作按钮</el-button>-->
+      </div>
+    </template>
+    <div v-for="item in links.array" :key="item" class="text item">
+      <p>用户名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.name}}</p>
+      <p>留言内容:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{item.content}}</p>
+      <p>创建时间：{{item.createdAt}}</p>
+    </div>
+  </el-card>
 </template>
 
 <script>
@@ -64,5 +76,24 @@ export default {
   font-size: small;
   color: crimson;
 }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.text {
+  font-size: 14px;
+  text-align: left;
+  border: 1px solid #0f0f0f;
+  margin-top: 5px;
+}
+
+.item {
+  margin-bottom: 18px;
+}
+
+.box-card {
+  width: 980px;
+}
 </style>

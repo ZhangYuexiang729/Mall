@@ -32,32 +32,56 @@
           <p>收件地址：{{item.address}}</p>
         </el-card>
       </div>
-      <button class="Addressbtn" @click="refreshAddress">添加地址</button>
+<!--      <button class="Addressbtn" @click="refreshAddress">添加地址</button>-->
+      <el-button type="primary" icon="el-icon-edit" class="Addressbtn" @click="dialogFormVisible = true">添加</el-button>
     </div>
     <br><br>
     <br><br>
     <br><br>
     <br><br>
     <!--表头-->
-<div class="add" v-if="$store.state.showaddress">
-  <span>添加地址</span>
-  <el-form ref="form" :model="form" label-width="80px">
-    <el-form-item label="收件人">
-      <el-input v-model="form.name"></el-input>
-    </el-form-item>
-    <el-form-item label="电话">
-      <el-input v-model="form.phone"></el-input>
-    </el-form-item>
-    <el-form-item label="收件地址">
-      <el-input v-model="form.address"></el-input>
-    </el-form-item>
-    <el-form-item label="是否为默认地址">
-      <el-input v-model="form.isFirst"></el-input>
-    </el-form-item>
+<!--<div class="add" v-if="$store.state.showaddress">-->
+<!--  <span>添加地址</span>-->
+<!--  <el-form ref="form" :model="form" label-width="80px">-->
+<!--    <el-form-item label="收件人">-->
+<!--      <el-input v-model="form.name"></el-input>-->
+<!--    </el-form-item>-->
+<!--    <el-form-item label="电话">-->
+<!--      <el-input v-model="form.phone"></el-input>-->
+<!--    </el-form-item>-->
+<!--    <el-form-item label="收件地址">-->
+<!--      <el-input v-model="form.address"></el-input>-->
+<!--    </el-form-item>-->
+<!--    <el-form-item label="是否为默认地址">-->
+<!--      <el-input v-model="form.isFirst"></el-input>-->
+<!--    </el-form-item>-->
 
-    <el-button type="primary" @click="ADDRESS">提交</el-button>
-  </el-form>
-</div>
+<!--    <el-button type="primary" @click="ADDRESS">提交</el-button>-->
+<!--  </el-form>-->
+<!--</div>-->
+    <el-dialog title="收货地址" v-model="dialogFormVisible">
+      <el-form :model="form">
+        <el-form-item label="收件人">
+                <el-input v-model="form.name"></el-input>
+              </el-form-item>
+              <el-form-item label="电话">
+                <el-input v-model="form.phone"></el-input>
+              </el-form-item>
+              <el-form-item label="收件地址">
+                <el-input v-model="form.address"></el-input>
+              </el-form-item>
+              <el-form-item label="是否为默认地址">
+                <el-input v-model="form.isFirst"></el-input>
+              </el-form-item>
+      </el-form>
+      <template #footer>
+    <span class="dialog-footer">
+      <el-button @click="dialogFormVisible = false">取 消</el-button>
+      <el-button type="primary" @click="dialogFormVisible = false;ADDRESS()" >确 定</el-button>
+    </span>
+      </template>
+    </el-dialog>
+
 
   </div>
 </template>
@@ -75,6 +99,8 @@ export default {
         address:'',
         isFirst:''
       },
+
+      dialogFormVisible: false,
      address:[],
       search : '',
       //选中列表
@@ -104,6 +130,7 @@ export default {
     },
 
     ADDRESS(){
+
       axios.post('http://127.0.0.1:3000/address/add',this.form,{
 
         transformRequest:[
@@ -190,12 +217,12 @@ export default {
   background-color:#C91623 ;
 }
 .Addressbtn{
-  width: 100px;
+  width: 200px;
   height: 100px;
-  background-color: #faf2cc;
-  position: absolute;
+  position: fixed;
   right: 15%;
   top: 80%;
+  font-size: 20px;
 }
 .add{
   width: 500px;
@@ -208,6 +235,7 @@ export default {
 }
 .box-card{
   width: 900px;
+  text-align: left;
 }
 .change{
   margin-right: 600px;

@@ -52,4 +52,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.container{
+
+  color: white;
+}
+.jumbotron{
+  background-color:transparent;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="col-md-8t">
-    <h3 class="reply">热点新闻:</h3>
     <ul class="list-group">
       <newitems v-for="(comment,index) in comments" :key="index" :comment="comment"/>
     </ul>
@@ -22,6 +21,9 @@ export default {
 <style>
 .reply {
   margin-top: 0px;
+  color: #2c3e50;
+  font-size: 30px;
+  font-weight: bold;
 }
 .jumbotron{
   padding: 0;

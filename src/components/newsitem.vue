@@ -1,8 +1,15 @@
 <template>
+  <div class="news">
   <li class="list-group-item">
-    <div class="user" v-for="items in news.array1" :key="items.id"><span id="id">{{ items.id }}</span>&nbsp;<a :href="items.url" >{{items.question}}</a><span class="hot">{{items.hot_number}}</span></div>
-
+    <div class="user"
+           v-for="items in news.array1"
+          :key="items.id">
+          <span id="id">{{ items.id }}</span>&nbsp;
+          <a :href="items.url" >{{items.question}}</a>
+          <span class="hot">{{items.hot_number}}</span>
+    </div>
   </li>
+  </div>
 </template>
 
 <script>
@@ -40,7 +47,7 @@ a{
   color: #2c3e50;
 }
 #id{
-  color: crimson;
+  color: #2c3e50;
 }
 .li {
   transition: .5s;
@@ -67,8 +74,9 @@ a{
   font-size: medium;
 }
 .user {
-  width: 80%;
-  font-size: 22px;
+  width: 100%;
+  font-size: 23px;
+  font-weight: bold;
   float: left;
   margin-top: 20px;
   /*margin-right: 500px;*/
@@ -80,4 +88,5 @@ a{
 .list-group-item{
   padding: 0px;
 }
+
 </style>
